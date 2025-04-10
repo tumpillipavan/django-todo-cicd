@@ -2,21 +2,15 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/tumpillipavan/django-todo-cicd.git'
-            }
-        }
-
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
         }
 
         stage('Test') {
             steps {
-                   bat 'mvn test'
+                bat 'mvn test'
             }
         }
     }
