@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/tumpillipavan/MavenHelloWorld.git'
+                git 'https://github.com/tumpillipavan/django-todo-cicd.git'
             }
         }
 
@@ -16,7 +16,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'mvn test'
+                   bat 'mvn test'
             }
         }
     }
